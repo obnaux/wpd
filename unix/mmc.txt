@@ -1,0 +1,7 @@
+free: Used to display the amount of free and used memory in the system.
+/proc/meminfo: Used to display detailed information about the system's memory usage.
+top: Used to display real-time information about the system's processes and memory usage.
+htop: An improved version of top with additional features and a more user-friendly interface.
+df: Used to display the amount of free and used disk space.
+du: Used to display the size of a file or directory.
+vmstat: Used to display information about the system's virtual memory, CPU usage, and I/O statistics.

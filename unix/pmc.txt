@@ -1,0 +1,4 @@
+kill: Used to terminate a process using its PID.
+pkill: Used to send a signal to a process based on its name.
+killall: Used to terminate all processes with a specific name.
+pgrep: Used to list the PIDs of processes based on their name.
