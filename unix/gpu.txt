@@ -1,0 +1,10 @@
+echo: Used to display messages on the terminal.
+clear: Used to clear the terminal screen.
+exit: Used to exit the current shell session.
+date: Used to display the current date and time.
+time: Used to measure the time taken by a command to execute.
+uptime: Used to display the system uptime.
+cal: Used to display the calendar for the current month.
+cat: Used to display the contents of a file.
+tty: Used to display the name of the terminal.
+man: Used to display the manual page for a command.

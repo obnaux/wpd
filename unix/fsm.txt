@@ -1,0 +1,21 @@
+ls: Used to list the contents of a directory.
+cd: Used to change the current working directory.
+pwd: Used to display the current working directory.
+cat: Used to display the contents of a file.
+mkdir: Used to create a new directory.
+rmdir: Used to remove an empty directory.
+rm: Used to remove a file or directory.
+cp: Used to copy files or directories.
+mv: Used to move or rename files or directories.
+chmod: Used to change the permissions of a file or directory.
+wc: Used to count the number of lines, words, and characters in a file.
+Piping and Redirection: Used to redirect the output of a command to a file or to another command using the pipe (|) symbol.
+grep: Used to search for a specific pattern in a file.
+tr: Used to translate or delete characters in a file.
+echo: Used to display messages on the terminal.
+sort: Used to sort the lines of a file.
+head: Used to display the first few lines of a file.
+tail: Used to display the last few lines of a file.
+diff: Used to compare the contents of two files.
+split: Used to split a large file into smaller files.
+gzip: Used to compress or decompress files.
