@@ -1,0 +1,14 @@
+calc.sh
+compare.sh
+cwl.sh
+fsm.txt
+gpu.txt
+largest.sh
+mmc.txt
+oldnew.sh
+pmc.txt
+prime.pl
+range.awk
+si.sh
+sort.pl
+table.sh
