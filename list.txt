@@ -1,14 +1,288 @@
-calc.sh
-compare.sh
-cwl.sh
-fsm.txt
-gpu.txt
-largest.sh
-mmc.txt
-oldnew.sh
-pmc.txt
-prime.pl
-range.awk
-si.sh
-sort.pl
-table.sh
+Shell script to compare two strings:
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter the first string: "
+read str1
+
+echo "Enter the second string: "
+read str2
+
+if [ "$str1" == "$str2" ]; then
+    echo "Strings are equal"
+else
+    echo "Strings are not equal"
+fi
+Perl script to check if a number is prime or not:
+perl
+Copy code
+#!/usr/bin/perl
+
+print "Enter a number: ";
+$num = <STDIN>;
+
+$is_prime = 1;
+
+if ($num == 1 || $num == 0) {
+    $is_prime = 0;
+} else {
+    for ($i=2; $i<=$num/2; $i++) {
+        if ($num % $i == 0) {
+            $is_prime = 0;
+            last;
+        }
+    }
+}
+
+if ($is_prime) {
+    print "$num is a prime number\n";
+} else {
+    print "$num is not a prime number\n";
+}
+Perl script to sort elements of an array:
+perl
+Copy code
+#!/usr/bin/perl
+
+@arr = (4, 2, 6, 1, 8, 3);
+@sorted_arr = sort {$a <=> $b} @arr;
+
+print "Original Array: @arr\n";
+print "Sorted Array: @sorted_arr\n";
+Awk script to print all even numbers in a given range:
+sql
+Copy code
+
+#!/usr/bin/awk -f
+
+BEGIN {
+    print "Enter the range (start end): ";
+    getline range < "-";
+    split(range, arr, " ");
+    start = arr[1];
+    end = arr[2];
+}
+
+{
+    for (i=start; i<=end; i++) {
+        if (i % 2 == 0) {
+            print i;
+        }
+    }
+}
+
+Script to replace all occurrences of a particular word in a given file:
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter the filename: "
+read filename
+
+echo "Enter the word to replace: "
+read old_word
+
+echo "Enter the new word: "
+read new_word
+
+sed -i "s/$old_word/$new_word/g" $filename
+
+echo "Replacement done."
+Script to find the number of characters, words, and lines in a file:
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter the filename: "
+read filename
+
+char_count=$(wc -c < $filename)
+word_count=$(wc -w < $filename)
+line_count=$(wc -l < $filename)
+
+echo "Number of characters: $char_count"
+echo "Number of words: $word_count"
+echo "Number of lines: $line_count"
+Shell script to print multiplication table of given number:
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter a number: "
+read num
+
+for (( i=1; i<=10; i++ ))
+do
+    echo "$num x $i = $((num*i))"
+done
+General Purpose Utility Commands:
+echo: Used to display messages on the terminal.
+clear: Used to clear the terminal screen.
+exit: Used to exit the current shell session.
+date: Used to display the current date and time.
+time: Used to measure the time taken by a command to execute.
+uptime: Used to display the system uptime.
+cal: Used to display the calendar for the current month.
+cat: Used to display the contents of a file.
+tty: Used to display the name of the terminal.
+man: Used to display the manual page for a command.
+
+
+
+
+User
+File System Management Commands (ls, cd, pwd, cat, mkdir, rmdir,
+rm, cp, mv, chmod, wc, piping and redirection, grep, tr, echo, sort,
+head, tail, diff, split, gzip)
+Process Management Commands (kill, pkill, killall, pgrep)
+Memory Management Commands (free, /proc/meminfo, top, htop, df,
+du, vmstat)
+Write a shell script to implement menu-driven calculator using case
+statement
+Write a shell script to determine largest among three integer numbers
+ChatGPT
+File System Management Commands:
+ls: Used to list the contents of a directory.
+cd: Used to change the current working directory.
+pwd: Used to display the current working directory.
+cat: Used to display the contents of a file.
+mkdir: Used to create a new directory.
+rmdir: Used to remove an empty directory.
+rm: Used to remove a file or directory.
+cp: Used to copy files or directories.
+mv: Used to move or rename files or directories.
+chmod: Used to change the permissions of a file or directory.
+wc: Used to count the number of lines, words, and characters in a file.
+Piping and Redirection: Used to redirect the output of a command to a file or to another command using the pipe (|) symbol.
+grep: Used to search for a specific pattern in a file.
+tr: Used to translate or delete characters in a file.
+echo: Used to display messages on the terminal.
+sort: Used to sort the lines of a file.
+head: Used to display the first few lines of a file.
+tail: Used to display the last few lines of a file.
+diff: Used to compare the contents of two files.
+split: Used to split a large file into smaller files.
+gzip: Used to compress or decompress files.
+Process Management Commands:
+kill: Used to terminate a process using its PID.
+pkill: Used to send a signal to a process based on its name.
+killall: Used to terminate all processes with a specific name.
+pgrep: Used to list the PIDs of processes based on their name.
+Memory Management Commands:
+free: Used to display the amount of free and used memory in the system.
+/proc/meminfo: Used to display detailed information about the system's memory usage.
+top: Used to display real-time information about the system's processes and memory usage.
+htop: An improved version of top with additional features and a more user-friendly interface.
+df: Used to display the amount of free and used disk space.
+du: Used to display the size of a file or directory.
+vmstat: Used to display information about the system's virtual memory, CPU usage, and I/O statistics.
+Shell script to implement menu-driven calculator using case statement:
+bash
+Copy code
+#!/bin/bash
+
+echo "Menu:"
+echo "1. Addition"
+echo "2. Subtraction"
+echo "3. Multiplication"
+echo "4. Division"
+echo "Enter your choice (1-4): "
+read choice
+
+echo "Enter two numbers: "
+read num1
+read num2
+
+case $choice in
+    1) result=$((num1 + num2))
+       echo "Result: $result"
+       ;;
+    2) result=$((num1 - num2))
+       echo "Result: $result"
+       ;;
+    3) result=$((num1 * num2))
+       echo "Result: $result"
+       ;;
+    4) if [ $num2 -eq 0 ]; then
+            echo "Division by zero not allowed"
+        else
+            result=$((num1 / num2))
+            echo "Result: $result"
+        fi
+       ;;
+    *) echo "Invalid choice"
+       ;;
+esac
+Shell script to determine the largest among three integer numbers:
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter three numbers: "
+read num1
+read num2
+read num3
+
+if [ $
+
+
+
+
+User
+Write a shell script to calculate simple interest.
+ChatGPT
+Here's a shell script to calculate simple interest:
+
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter the principal amount: "
+read principal
+
+echo "Enter the rate of interest (in percentage): "
+read rate
+
+echo "Enter the time period (in years): "
+read time
+
+interest=$((principal * rate * time / 100))
+amount=$((principal + interest))
+
+echo "Simple Interest: $interest"
+echo "Total Amount: $amount"
+In this script, the user is prompted to enter the principal amount, rate of interest, and time period in years. The script then calculates the simple interest and the total amount, and displays the results on the terminal.
+
+
+
+
+
+User
+Shell script to determine the largest among three integer numbers:
+ChatGPT
+Here's a shell script to determine the largest among three integer numbers:
+
+bash
+Copy code
+#!/bin/bash
+
+echo "Enter the first number: "
+read num1
+
+echo "Enter the second number: "
+read num2
+
+echo "Enter the third number: "
+read num3
+
+if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
+then
+  echo "The largest number is $num1"
+elif [ $num2 -gt $num1 ] && [ $num2 -gt $num3 ]
+then
+  echo "The largest number is $num2"
+else
+  echo "The largest number is $num3"
+fi
+
